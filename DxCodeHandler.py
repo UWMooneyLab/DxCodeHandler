@@ -1,4 +1,5 @@
 import json
+from six import string_types
 
 class ICD9:
     """
@@ -54,7 +55,7 @@ class ICD9:
     def parent(self, codes):
 
         #throws exception if input not a string or a list
-        if not isinstance(codes, basestring) and not isinstance(codes, list):
+        if not isinstance(codes, string_types) and not isinstance(codes, list):
             raise Exception('ICD9.parent() input must be string or list')
 
         output = []
@@ -101,7 +102,7 @@ class ICD9:
     def children(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD9.children() input must be string or list')
 
         temp = []
@@ -161,7 +162,7 @@ class ICD9:
     def depth(self, code):
 
         # throws exception if input not a string
-        if not isinstance(code, basestring):
+        if not isinstance(code, string_types):
             raise Exception('ICD9.depth() input must be string')
 
         #throws exception if input code is not valid icd9 code
@@ -183,7 +184,7 @@ class ICD9:
     def description(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD9.description() input must be string or list')
 
 
@@ -208,7 +209,7 @@ class ICD9:
     def abstract(self, code, depth):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD9.abstract() code input must be string or list')
 
         # throws exception if requested depth is not an integer
@@ -257,7 +258,7 @@ class ICD9:
     def ancestors(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD9.ancestors() input must be string or list')
 
         codes = []
@@ -357,7 +358,7 @@ class ICD10:
     def parent(self, codes):
 
         # throws exception if input not a string or a list
-        if not isinstance(codes, basestring) and not isinstance(codes, list):
+        if not isinstance(codes, string_types) and not isinstance(codes, list):
             raise Exception('ICD10.parent() input must be string or list')
 
         output = []
@@ -394,7 +395,7 @@ class ICD10:
     def children(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD10.children() input must be string or list')
 
         temp = []
@@ -427,7 +428,7 @@ class ICD10:
     def descendants(self, code):
 
         # throws exception if input not a string
-        if not isinstance(code, basestring):
+        if not isinstance(code, string_types):
             raise Exception('ICD10.descendants() input must be string')
 
         # throws exception if code is not a valid icd10 code
@@ -450,7 +451,7 @@ class ICD10:
     def depth(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring):
+        if not isinstance(code, string_types):
             raise Exception('ICD10.depth() input must be string')
 
         # throws exception if code is not a valid icd10 code
@@ -491,7 +492,7 @@ class ICD10:
     def abstract(self, code, depth):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD10.abstract() input must be string or list')
 
 
@@ -536,7 +537,7 @@ class ICD10:
     def ancestors(self, code):
 
         # throws exception if input not a string or a list
-        if not isinstance(code, basestring) and not isinstance(code, list):
+        if not isinstance(code, string_types) and not isinstance(code, list):
             raise Exception('ICD10.ancestors() input must be string or list')
 
         codes = []
