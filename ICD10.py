@@ -10,7 +10,7 @@ class ICD10:
 
         self.__parents = json.load(open(dir_path + '/DxCodeHandler data/icd10/parents.json'))
         self.__depths = json.load(open(dir_path + '/DxCodeHandler data/icd10/depths.json'))
-        self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd10/descriptions.json'))
+        #self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd10/descriptions.json'))
         self.__descendants = json.load(open(dir_path + '/DxCodeHandler data/icd10/descendants.json'))
         self.__children = json.load(open(dir_path + '/DxCodeHandler data/icd10/children.json'))
 
