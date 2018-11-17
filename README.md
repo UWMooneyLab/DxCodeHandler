@@ -21,10 +21,14 @@ An instance of either of these classes has a collection of functions that will a
 #### Importing and creating an instance
 Both the ICD9 and ICD10 classes have the same functions; however, ICD9 will be used as a demostration
 ```
-from library.DxCodeHandler import ICD9
+## add DxCodeHandler to python path
+import sys
+sys.path.append("/path/to/DxCodeHandler/")
+
+from DxCodeHandler.ICD9 import ICD9
 icd9 = ICD9()
 
-from library.DxCodeHandler import ICD10
+from DxCodeHandler.ICD10 import ICD10
 icd10 = ICD10()
 ```
 #### description()
