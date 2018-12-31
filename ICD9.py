@@ -162,10 +162,24 @@ class ICD9:
     Returns: <list> a list of all the descendants from the input code or null if no descendants exist
     """
     def descendants(self, code):
+        # throws exception if input not a string or a list
+        if not isinstance(code, string_types) and not isinstance(code, list):
+            raise Exception('ICD9.descendants() input must be string or list')
 
-        # throws exception if input not a string
-        if type(code) != str:
-            raise Exception('ICD9.descendants() input must be string')
+        temp = []
+
+        # checks if input is list
+        if type(code) == list:
+            for i in code:
+                #retrieve child of code
+                temp += self.__getDescendants(i)
+        else:
+            temp += self.__getDescendants(code)
+
+        return temp
+
+
+    def __getDescendants(self, code):
 
         # throws exception if code is not a valid icd9 code
         if not self.isCode(code):
@@ -173,10 +187,8 @@ class ICD9:
 
         code = code.upper()
 
-        temp = [code]
         try:
-            temp += self.__descendants[code]
-            return temp
+            return self.__descendants[code]
         except KeyError:
             return None
 
