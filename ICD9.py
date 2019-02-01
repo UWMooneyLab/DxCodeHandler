@@ -15,8 +15,8 @@ class ICD9:
         dir_path = os.path.dirname(os.path.realpath(__file__))
         self.errorHandle = errorHandle
 
-        self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd9/descriptions4.json'))
-        self.__descendants = json.load(open(dir_path + '/DxCodeHandler data/icd9/descendants.json'))
+        self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd9/descriptions5.json'))
+        self.__descendants = json.load(open(dir_path + '/DxCodeHandler data/icd9/descendants2.json'))
         self.__children = json.load(open(dir_path +   '/DxCodeHandler data/icd9/children.json'))
         self.__parents = json.load(open(dir_path +   '/DxCodeHandler data/icd9/parents2.json'))
         self.__depths = json.load(open(dir_path +   '/DxCodeHandler data/icd9/depths2.json'))
