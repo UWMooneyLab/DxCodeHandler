@@ -10,7 +10,7 @@ class ICD10:
 
         self.__parents = json.load(open(dir_path + '/DxCodeHandler data/icd10/parents.json'))
         self.__depths = json.load(open(dir_path + '/DxCodeHandler data/icd10/depths.json'))
-        #self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd10/descriptions.json'))
+        self.__descriptions = json.load(open(dir_path + '/DxCodeHandler data/icd10/descriptions.json'))
         self.__descendants = json.load(open(dir_path + '/DxCodeHandler data/icd10/descendants.json'))
         self.__children = json.load(open(dir_path + '/DxCodeHandler data/icd10/children.json'))
 
@@ -83,7 +83,7 @@ class ICD10:
 
         if type(codes) is list:
             for i in codes:
-                output.append(self.__parent[i])
+                output.append(self.__parent(i))
             output = [m for m in output if m]
             output = list(set(output))
             if len(output) > 0:
@@ -187,19 +187,20 @@ class ICD10:
     """
     Input: <string> any icd9 code
     Returns: <string> The official description of the input icd9 code or null if no children exist
+    """
     
     def description(self, code):
     
         # throws exception if code is not a valid icd10 code
         if not self.isCode(code):
-            raise Exception('%s is not an ICD10 code' % code)
+            return self.handleError(code)
     
         code = code.upper()
         try:
             return self.__descriptions[code]
         except KeyError:
             return None
-    """
+    
 
     """
     Input: <string> any icd9 code
